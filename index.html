@@ -7,9 +7,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Chrono KJV">
     <meta name="theme-color" content="#8b5a2b">
-    <link rel="apple-touch-icon" href="https://i.postimg.cc/GmvRQbqG/icon-png.jpg">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/GmvRQbqG/icon-png.jpg">
-    <link rel="icon" href="https://i.postimg.cc/GmvRQbqG/icon-png.jpg">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+    <link rel="icon" href="icon.png">
     <title>Chronological KJV</title>
     <style>
         body {
@@ -501,6 +501,7 @@
             document.getElementById("refsDisplay").textContent = PLAN[currentDay - 1];
             document.getElementById("completeCheck").checked = completed.has(currentDay);
             document.getElementById("nextBtn").disabled = !completed.has(currentDay) || currentDay === PLAN.length;
+            document.getElementById("prevBtn").disabled = currentDay === 1;
             
             const percent = (completed.size / PLAN.length) * 100;
             document.getElementById("progressBar").style.width = percent + "%";
