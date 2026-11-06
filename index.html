@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
     <link rel="icon" href="icon.png">
+    <link rel="manifest" href="manifest.json">
     <title>Chronological KJV</title>
     <style>
         body {
@@ -46,7 +47,7 @@
             cursor: pointer;
             min-width: 110px;
         }
-        
+
         button:disabled {
             opacity: 0.35;
             cursor: not-allowed;
@@ -502,7 +503,7 @@
             document.getElementById("completeCheck").checked = completed.has(currentDay);
             document.getElementById("nextBtn").disabled = !completed.has(currentDay) || currentDay === PLAN.length;
             document.getElementById("prevBtn").disabled = currentDay === 1;
-            
+
             const percent = (completed.size / PLAN.length) * 100;
             document.getElementById("progressBar").style.width = percent + "%";
             document.getElementById("progressText").textContent = completed.size + " of " + PLAN.length + " days completed";
@@ -536,6 +537,10 @@
 
         loadProgress();
         updateUI();
+
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js");
+        }
     </script>
 </body>
 </html>

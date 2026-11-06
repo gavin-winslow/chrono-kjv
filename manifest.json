@@ -1,0 +1,11 @@
+{
+    "name": "Chronological KJV",
+    "short_name": "Chrono KJV",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#f7f2e9",
+    "theme_color": "#8b5a2b",
+    "icons": [
+        { "src": "icon.png", "sizes": "512x512", "type": "image/png" }
+    ]
+}
